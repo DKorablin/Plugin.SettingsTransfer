@@ -18,5 +18,5 @@ using System.Runtime.InteropServices;
 #endif
 [assembly: AssemblyCompany("Danila Korablin")]
 [assembly: AssemblyProduct("Plugin.SettingsTransfer")]
-[assembly: AssemblyCopyright("Copyright © Danila Korablin 2017-2019")]
+[assembly: AssemblyCopyright("Copyright © Danila Korablin 2017-2024")]
 #endif

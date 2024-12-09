@@ -12,16 +12,15 @@
 		<description>This plugin is intended to transfer settings values from the different data sources</description>
 		<releaseNotes></releaseNotes>
 		<copyright>Danila Korablin</copyright>
-		<tags>SAL,Plugin</tags>
+		<tags>SAL,Plugin,SettingsProvider</tags>
 		<dependencies>
 			<group targetFramework="net20">
-				<dependency id="SAL.Flatbed" version="1.2.9" />
-				<dependency id="SAL.Windows" version="1.2.9" />
+				<dependency id="SAL.Windows" version="1.2.10" />
 			</group>
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="readme.md" target="docs" />
+		<file src="README.md" target="docs" />
 		<!--file src="bin\net20\Plugin.SettingsTransfer.xml" target="xml" /-->
 		<file src="bin\net20\Plugin.SettingsTransfer.dll" target="lib\net20" />
 	</files>

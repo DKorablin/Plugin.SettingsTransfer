@@ -9,8 +9,11 @@ namespace Plugin.SettingsTransfer
 {
 	public partial class PanelSettingsTransfer : UserControl
 	{
-		private PluginWindows Plugin => (PluginWindows)this.Window.Plugin;
-		private IWindow Window => (IWindow)base.Parent;
+		private PluginWindows Plugin
+			=> (PluginWindows)this.Window.Plugin;
+
+		private IWindow Window
+			=> (IWindow)base.Parent;
 
 		private ISettingsPluginProvider SelectedProvider
 		{
@@ -21,7 +24,8 @@ namespace Plugin.SettingsTransfer
 			}
 		}
 
-		private IPluginDescription SelectedPlugin => lvPlugins.SelectedItems.Count == 0 ? null : (IPluginDescription)lvPlugins.SelectedItems[0].Tag;
+		private IPluginDescription SelectedPlugin
+			=> lvPlugins.SelectedItems.Count == 0 ? null : (IPluginDescription)lvPlugins.SelectedItems[0].Tag;
 
 		public PanelSettingsTransfer()
 			=> InitializeComponent();
