@@ -9,11 +9,9 @@ namespace Plugin.SettingsTransfer
 {
 	public partial class PanelSettingsTransfer : UserControl
 	{
-		private PluginWindows Plugin
-			=> (PluginWindows)this.Window.Plugin;
+		private PluginWindows Plugin { get => (PluginWindows)this.Window.Plugin; }
 
-		private IWindow Window
-			=> (IWindow)base.Parent;
+		private IWindow Window { get => (IWindow)base.Parent; }
 
 		private ISettingsPluginProvider SelectedProvider
 		{
@@ -28,7 +26,7 @@ namespace Plugin.SettingsTransfer
 			=> lvPlugins.SelectedItems.Count == 0 ? null : (IPluginDescription)lvPlugins.SelectedItems[0].Tag;
 
 		public PanelSettingsTransfer()
-			=> InitializeComponent();
+			=> this.InitializeComponent();
 
 		protected override void OnCreateControl()
 		{
@@ -45,7 +43,6 @@ namespace Plugin.SettingsTransfer
 			{
 				tscbProviders.Items.Add(plugin);
 				tsbnTarget.DropDownItems.Add(new ToolStripMenuItem(plugin.Name) { Tag = plugin, });
-
 			}
 
 			tscbProviders.SelectedIndex = 0;
@@ -92,7 +89,7 @@ namespace Plugin.SettingsTransfer
 				{
 					ListViewItem listItem = new ListViewItem(new String[lvSettings.Columns.Count]);
 					listItem.SubItems[colItemName.Index].Text = item.Key;
-					listItem.SubItems[colItemValue.Index].Text = item.Value == null ? "<null>" : item.Value.ToString();
+					listItem.SubItems[colItemValue.Index].Text = item.Value?.ToString() ?? "<null>";
 					itemsToAdd.Add(listItem);
 					if(item.Value is IDisposable d)
 						d.Dispose();
