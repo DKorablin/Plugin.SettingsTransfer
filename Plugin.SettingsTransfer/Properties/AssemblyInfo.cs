@@ -5,4 +5,3 @@ using System.Runtime.InteropServices;
 [assembly: System.CLSCompliant(true)]
 
 [assembly: AssemblyDescription("Copy plugins settings from one data source to another")]
-[assembly: AssemblyCopyright("Copyright © Danila Korablin 2017-2025")]
